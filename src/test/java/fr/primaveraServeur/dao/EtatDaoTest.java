@@ -35,7 +35,7 @@ public class EtatDaoTest {
 	@Test
 	public void testSave(){
 		RolePrim role=roleDao.findByName("role test1");
-		EtatPrim etat =new EtatPrim(etatName,true);
+		EtatPrim etat =new EtatPrim(etatName,true,true);
 		etat.addRole(role);
 		role=roleDao.findByName("role test2");
 		etat.addRole(role);

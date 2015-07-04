@@ -30,17 +30,17 @@ public class configurationTest {
 		service5.setIdservice(1005);
 
 		//creation d'etat
-		EtatPrim etat1=new EtatPrim("nouvelle fiche", false);
+		EtatPrim etat1=new EtatPrim("nouvelle fiche", false,true);
 		etat1.setIdetat(1001);
-		EtatPrim etat2=new EtatPrim("mission inspecteur", true);
+		EtatPrim etat2=new EtatPrim("mission inspecteur", true,true);
 		etat2.setIdetat(1002);
-		EtatPrim etat3=new EtatPrim("rapport inspecteur", true);
+		EtatPrim etat3=new EtatPrim("rapport inspecteur", true,false);
 		etat3.setIdetat(1003);
-		EtatPrim etat4=new EtatPrim("chantier", true);
+		EtatPrim etat4=new EtatPrim("chantier", true,true);
 		etat4.setIdetat(1004);
-		EtatPrim etat5=new EtatPrim("rapport de chef de chantier", true);
+		EtatPrim etat5=new EtatPrim("rapport de chef de chantier", true,false);
 		etat5.setIdetat(1005);
-		EtatPrim etat6=new EtatPrim("cloture", true);
+		EtatPrim etat6=new EtatPrim("cloture", true,true);
 		etat6.setIdetat(1006);
 		//list d'etat
 		ArrayList<EtatPrim> listEtat=new ArrayList<EtatPrim>();

@@ -42,6 +42,9 @@ public class FichePrim implements Serializable {
 
 	@Temporal(TemporalType.TIMESTAMP)
 	private Date dateFin;
+	
+	@Column(nullable = false, columnDefinition = "TINYINT(1)")
+	private boolean rempli;
 
 	@Column(length=45)
 	private String latitude;
@@ -120,6 +123,14 @@ public class FichePrim implements Serializable {
 
 	public void setDateFin(Date dateFin) {
 		this.dateFin = dateFin;
+	}
+
+	public boolean isRempli() {
+		return rempli;
+	}
+
+	public void setRempli(boolean rempli) {
+		this.rempli = rempli;
 	}
 
 	public String getLatitude() {

@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import fr.primaveraServeur.model.RolePrim;
 import fr.primaveraServeur.model.UserPrim;
 
 @Service("userDao")
@@ -41,6 +42,12 @@ public class UserDaoImpl implements UserDao {
 	@Override
 	public UserPrim findByMail(String addresseMail) {
 		return (UserPrim) sessionFactory.getCurrentSession().createCriteria(UserPrim.class).add(Restrictions.eq("addresseMail",addresseMail)).uniqueResult();
+	}
+	
+	@SuppressWarnings("unchecked")
+	@Override
+	public List<UserPrim> findByRole(RolePrim role) {
+		return sessionFactory.getCurrentSession().createCriteria(UserPrim.class).add(Restrictions.eq("rolePrim",role)).list();
 	}
 
 }

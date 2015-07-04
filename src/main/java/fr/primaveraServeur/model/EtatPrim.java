@@ -28,6 +28,9 @@ public class EtatPrim implements Serializable {
 	@Column(nullable = false, columnDefinition = "TINYINT(1)")
 	private boolean groupe;
 	
+	@Column(nullable = false, columnDefinition = "TINYINT(1)")
+	private boolean remObligatoire;
+	
 	//uni-directional many-to-many association to ServicePrim
 	@ManyToMany(fetch = FetchType.EAGER,cascade=CascadeType.PERSIST)
 	@JoinTable(name="etat_role_prim", 
@@ -38,9 +41,10 @@ public class EtatPrim implements Serializable {
 	public EtatPrim() {
 	}
 
-	public EtatPrim(String etat,boolean groupe) {
+	public EtatPrim(String etat,boolean groupe,boolean remObligatoire) {
 		this.etat = etat;
 		this.groupe = groupe;
+		this.remObligatoire=remObligatoire;
 		rolePrims=new HashSet<RolePrim>();
 	}
 
@@ -68,6 +72,14 @@ public class EtatPrim implements Serializable {
 		this.groupe = groupe;
 	}
 	
+	public boolean isRemObligatoire() {
+		return remObligatoire;
+	}
+	
+	public void setRemObligatoire(boolean remObligatoire) {
+		this.remObligatoire = remObligatoire;
+	}
+	
 	public Set<RolePrim> getRolePrims() {
 		return this.rolePrims;
 	}
@@ -79,6 +91,7 @@ public class EtatPrim implements Serializable {
 	public void addRole(RolePrim role){
 		this.rolePrims.add(role);
 	}
+
 
 	@Override
 	public String toString() {

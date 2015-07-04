@@ -50,7 +50,7 @@ public class FicheDaoTest {
 		EtatPrim etat=etatDao.findById(idetat);
 		DangerPrim danger=dangerDao.findById(idDanger);
 		
-		FichePrim fiche =new FichePrim(new Date(), "latitude Test2", "longitude Test2", "titre Test2", etat, userCreateur, danger);
+		FichePrim fiche =new FichePrim(new Date(), "latitude Test2", "longitude Test2", "titre Test2boolean", etat, userCreateur, danger);
 
 		DescriptionPrim description=new DescriptionPrim(new Date(), "Description Test5tt", userCreateur);
 		fiche.addDescriptionPrim(description);
@@ -62,12 +62,13 @@ public class FicheDaoTest {
 		fiche.addDescriptionPrim(description3);
 		
 
-		PhotoPrim photo=new PhotoPrim("LienPhoto Test16");
+		PhotoPrim photo=new PhotoPrim("LienPhoto Test21");
 		fiche.addPhotoPrim(photo);
-		PhotoPrim photo1=new PhotoPrim("LienPhoto Test17");
+		PhotoPrim photo1=new PhotoPrim("LienPhoto Test22");
 		fiche.addPhotoPrim(photo1);
-		PhotoPrim photo2=new PhotoPrim("LienPhoto Test18");
+		PhotoPrim photo2=new PhotoPrim("LienPhoto Test23");
 		fiche.addPhotoPrim(photo2);
+		fiche.setRempli(true);
 		
 		ficheDao.save(fiche);
 		assertNotNull(fiche.getIdfiche());

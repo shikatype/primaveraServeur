@@ -64,10 +64,19 @@ public class UserDaoTest {
 	}
 	
 	@Test
-	public void testFindByName(){
+	public void testFindByMail(){
 		UserPrim user=UserDao.findByMail(adresseMail);
 		assertNotNull(user);
 		System.out.println("testFindByMail: "+user);
+	}
+	
+	@Test
+	public void testFindByRole(){
+		RolePrim role=roleDao.findByName("role test2");
+		List<UserPrim> listUser=UserDao.findByRole(role);
+		assertNotNull(listUser);
+		assertTrue(listUser.size() > 0);
+		System.out.println("testFindByRole: "+listUser);
 	}
 
 	@Test
