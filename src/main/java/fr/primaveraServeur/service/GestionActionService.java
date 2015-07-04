@@ -11,8 +11,7 @@ public interface GestionActionService {
 
 	
 	
-	//service fiche
-	
+	//service fiche	
 	
 	/**
 	 * permet la creation de fiche en base de donnée ainsi que l'attribution à

@@ -9,14 +9,7 @@ import fr.primaveraServeur.model.UserPrim;
 
 public interface GestionOptionService {
 
-	/**
-	 * recuperation de tous les utilisateurs qui sont
-	 * contenu dans les roles ou l'affectation des fiches et groupes de fiche
-	 * est fait par utilisateur à l'etat plus un.
-	 * @param idetat : id de l'etat courant de la fiche
-	 * @return
-	 */
-	public List<UserPrim> affectation(Integer idetat);
+	//demande de droit
 	
 	/**
 	 * permet de connaitre si l'utilisateurs a le droit de cloturer un fiche
@@ -54,6 +47,8 @@ public interface GestionOptionService {
 	 */
 	public boolean serviceRecupAllFiche(Integer idUser);
 	
+	//recuperation de données
+	
 	/**
 	 * permet de récupérer toute la liste de danger
 	 * @return
@@ -72,4 +67,13 @@ public interface GestionOptionService {
 	 */
 	public List<FichePrim> listAllFiche();
 	
+	/**
+	 * recuperation de tous les utilisateurs qui sont
+	 * contenu dans les roles ou l'affectation des fiches et groupes de fiche
+	 * est fait par utilisateur à l'etat plus un.
+	 * (permet de savoir a qui on peut affecté la fiche pour l'etat suivant)
+	 * @param idetat : id de l'etat courant de la fiche
+	 * @return
+	 */
+	public List<UserPrim> affectation(Integer idetat);
 }

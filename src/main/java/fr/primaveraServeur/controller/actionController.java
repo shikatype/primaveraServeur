@@ -32,6 +32,8 @@ public class actionController {
 	@Autowired
 	private GestionHistoriqueService gestionHistoriqueService;
 
+	//controleur
+	
 	@RequestMapping(value = "/fiche", method = RequestMethod.POST)
 	public ModelAndView afficheFiche(@RequestParam Integer iduser,@RequestParam Integer idfiche) {
 		UserPrim user = gestionActionService.recupUser(iduser);
@@ -209,6 +211,8 @@ public class actionController {
 		return initialisePageMapGroupe(user,etat,groupe);
 	}
 
+	//initialisation des pages avec les données
+	
 	private ModelAndView initialisePageCreationGroupe(UserPrim user, EtatPrim etat,Integer erreur){
 		ModelAndView model = new ModelAndView();
 		EtatPrim etatplus = gestionActionService.recupEtatPlusAvecId(etat.getIdetat());
