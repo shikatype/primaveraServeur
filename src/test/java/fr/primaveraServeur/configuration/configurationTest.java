@@ -85,7 +85,7 @@ public class configurationTest {
 		role2.addService(service3);
 		role3.addService(service4);
 		role4.addService(service4);
-		//role5.addService(service3);
+		role5.addService(service3);
 		
 		/**
 		 * pour savoir si l'utilisateur l'affect a un role ou pas( voir l'etat +1 et voir si il a recuperation par user ou role)
